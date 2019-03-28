@@ -5,4 +5,5 @@
     <color name="textLogin">#7b7b7b</color>
     <color name="backlogin">#00cb65</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorGreen">#00cb65</color>
 </resources>

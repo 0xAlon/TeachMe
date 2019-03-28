@@ -14,11 +14,19 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
+<<<<<<< HEAD
                             <entry key="height" value="145" />
                             <entry key="outputName" value="ic_knowledge" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\pc\Downloads\knowledge.svg" />
                             <entry key="width" value="145" />
+=======
+                            <entry key="height" value="26" />
+                            <entry key="outputName" value="ic_computer" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="$USER_HOME$/Downloads/computer.svg" />
+                            <entry key="width" value="37" />
+>>>>>>> 8a9ab064b1585950533402580d65be727d2cb36b
                           </map>
                         </option>
                       </PersistentState>

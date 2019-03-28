@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+<<<<<<< HEAD
+=======
+        <item>@font/rubik</item>
+>>>>>>> 8a9ab064b1585950533402580d65be727d2cb36b
         <item>@font/rubik_medium</item>
     </array>
 </resources>

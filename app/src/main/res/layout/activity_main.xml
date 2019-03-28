@@ -6,45 +6,82 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilProfession"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp"
+        android:background="@color/colorGreen"
+        android:gravity="center"
+        >
 
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Profession" />
+        <TextView
+            android:id="@+id/tvSemester"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_calendar"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="סמסטר"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
 
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilSemester"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/white" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Semester" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/tvSubject"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_book"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="מקצוע"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/white" />
 
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/tvStudentName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableTop="@drawable/ic_computer"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/rubik"
+            android:gravity="center"
+            android:text="שם תלמיד"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btnSheet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bottom Sheet" />
+    </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/rubik_medium"
+        android:gravity="center"
+        android:text="לתחילת עבודה\nהשתמש בתפריט"
+        android:layout_gravity="center"
+        android:textColor="#bcbcbc"
+        android:textSize="26sp" />
 
 </LinearLayout>
