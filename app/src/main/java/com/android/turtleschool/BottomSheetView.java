@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class BottomSheetView extends LinearLayout {
 
@@ -20,17 +21,17 @@ public class BottomSheetView extends LinearLayout {
     TextInputEditText etSearch;
     @BindView(R.id.lvList)
     ListView lvList;
-    private ArrayList<String> originalList, filteredList;
+    private ArrayList<String> filteredList;
+    private MainActivity.CloseListener closeListener;
 
-    public BottomSheetView(Context context) {
+    public BottomSheetView(Context context, ArrayList<String> originalList) {
         super(context);
         inflate(context, R.layout.view_button_sheet, this);
         ButterKnife.bind(this);
-        initList();
-        intiSearch();
+        intiSearch(originalList);
     }
 
-    private void intiSearch() {
+    private void intiSearch(ArrayList<String> originalList) {
 
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -63,22 +64,14 @@ public class BottomSheetView extends LinearLayout {
         });
     }
 
-    private void initList() {
-        originalList = new ArrayList<>();
-        originalList.add("Alon");
-        originalList.add("Alon1");
-        originalList.add("Alon2");
-        originalList.add("Alon3");
-        originalList.add("Refeal");
-        originalList.add("Refeal1");
-        originalList.add("Refeal3");
-        originalList.add("Refeal2");
-        originalList.add("Inna");
-        originalList.add("Assaf");
-        originalList.add("Dan");
-        originalList.add("Ilan");
-        originalList.add("Daviv");
-        originalList.add("Piter");
-        originalList.add("Josh");
+    @OnClick(R.id.ibClose)
+    public void close() {
+        if (closeListener != null) {
+            closeListener.onCloseClicked();
+        }
+    }
+
+    public void setCloseListener(MainActivity.CloseListener closeListener) {
+        this.closeListener = closeListener;
     }
 }

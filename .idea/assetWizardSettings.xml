@@ -15,10 +15,10 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="height" value="26" />
-                            <entry key="outputName" value="ic_computer" />
+                            <entry key="outputName" value="ic_delete_cross" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="$USER_HOME$/Downloads/computer.svg" />
-                            <entry key="width" value="37" />
+                            <entry key="sourceFile" value="$USER_HOME$/Downloads/delete_cross.svg" />
+                            <entry key="width" value="26" />
                           </map>
                         </option>
                       </PersistentState>
