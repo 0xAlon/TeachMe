@@ -2,12 +2,8 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-<<<<<<< HEAD
     <color name="colorAccent">#bcbcbc</color>
-=======
     <color name="textLogin">#7b7b7b</color>
-    <color name="backlogin">#00cb65</color>
-    <color name="colorAccent">#D81B60</color>
->>>>>>> 6d7e9cb61b447ba94348440a5864eba5eeeea777
+    <color name="backLogin">#00cb65</color>
     <color name="colorGreen">#00cb65</color>
 </resources>
