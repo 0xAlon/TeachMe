@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         BottomSheetView bottomSheetView = new BottomSheetView(this);
         bottomSheetDialog.setContentView(bottomSheetView);
-        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(((View) bottomSheetView.getParent()));
-        bottomSheetBehavior.setPeekHeight(20000);
         bottomSheetDialog.show();
     }
 }
