@@ -2,5 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
+    <color name="textLogin">#7b7b7b</color>
+    <color name="backlogin">#00cb65</color>
     <color name="colorAccent">#D81B60</color>
 </resources>

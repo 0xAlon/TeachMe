@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.8"
+        android:background="@color/backlogin"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_knowledge" />
+
+        <TextView
+            android:id="@+id/teachMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="TeachMe"
+            android:textColor="@android:color/white"
+            android:textSize="29sp"
+            android:textStyle="bold"
+            tools:fontFamily="@font/rubik_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:focusableInTouchMode="true"
+            android:hint="שם משתמש"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="@color/textLogin"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:focusableInTouchMode="true"
+            android:gravity="end"
+            android:hint="סיסמא"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/textLogin"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="35dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/backlogin"
+            android:text="היכנס"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            tools:fontFamily="@font/rubik_medium" />
+
+    </LinearLayout>
+
+</LinearLayout>

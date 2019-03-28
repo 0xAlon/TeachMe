@@ -1,9 +1,7 @@
 package com.android.turtleschool;
 
 import android.os.Bundle;
-import android.view.View;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnSheet)
-    public void btnSheet(){
+    public void btnSheet() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         BottomSheetView bottomSheetView = new BottomSheetView(this);
         bottomSheetDialog.setContentView(bottomSheetView);
