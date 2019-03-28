@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1081643918175",
+    "firebase_url": "https://android-hackathon-12d48.firebaseio.com",
+    "project_id": "android-hackathon-12d48",
+    "storage_bucket": "android-hackathon-12d48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081643918175:android:d7b4a50ef74625ce",
+        "android_client_info": {
+          "package_name": "com.android.turtleschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081643918175-dl2h569qgqdla6a1jukl9e0eumf8f375.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.turtleschool",
+            "certificate_hash": "e257df3b0f6c12f323e4cdf0e2d37fd611923e2e"
+          }
+        },
+        {
+          "client_id": "1081643918175-kov2hgu3ksruutn7rc5v7n3k1cq3679e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhfhfP8lLvyjDHNb7HIyHowXcewrziJm8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081643918175-kov2hgu3ksruutn7rc5v7n3k1cq3679e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
