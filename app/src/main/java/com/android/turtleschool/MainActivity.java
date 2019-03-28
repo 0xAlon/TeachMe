@@ -1,6 +1,7 @@
 package com.android.turtleschool;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -25,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnSheet)
     public void btnSheet(){
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        bottomSheetDialog.setContentView(new BottomSheetView(this));
-        BottomSheetBehavior bottomSheetBehavior = bottomSheetDialog.getBehavior();
-        bottomSheetBehavior.setPeekHeight(2000);
+        BottomSheetView bottomSheetView = new BottomSheetView(this);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(((View) bottomSheetView.getParent()));
+        bottomSheetBehavior.setPeekHeight(20000);
         bottomSheetDialog.show();
     }
 }
