@@ -1,5 +1,6 @@
 package com.android.turtleschool;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -27,12 +28,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        float[] hsv = new float[3];
+        Color.colorToHSV(getResources().getColor(R.color.colorGreen), hsv);
+        hsv[2] *= 0.8f; // value component
+        getWindow().setStatusBarColor(Color.HSVToColor(hsv));
     }
 
     @OnClick({R.id.tvSemester, R.id.tvStudentName, R.id.tvSubject})
     public void buttonClick(View view) {
         ArrayList<String> originalList = new ArrayList<>();
-        String type = null;
+        String type = "";
         switch (view.getId()) {
             case R.id.tvSemester:
                 type = "semester";
