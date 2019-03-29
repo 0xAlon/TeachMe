@@ -38,6 +38,7 @@ public class BottomSheetView extends LinearLayout {
         inflate(context, R.layout.view_button_sheet, this);
         ButterKnife.bind(this);
         this.type = type;
+        tilSearch.setHint(type.equalsIgnoreCase("subject") ? "הקלד את שם המקצוע" : "הקלד את שם התלמיד");
         boolean isSearchAbility = !type.equalsIgnoreCase("semester");
         if (isSearchAbility) {
             intiSearch(originalList);

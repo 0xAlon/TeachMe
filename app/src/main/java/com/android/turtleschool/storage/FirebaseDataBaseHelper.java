@@ -1,7 +1,6 @@
 package com.android.turtleschool.storage;
 
 import com.android.turtleschool.adapters.StudentAdapter;
-import com.android.turtleschool.data.Semester;
 import com.android.turtleschool.data.Student;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -10,6 +9,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 
@@ -31,6 +33,8 @@ public class FirebaseDataBaseHelper {
         return result;
     }
 
+    @SuppressWarnings("unchecked")
+
     public void fillSchoolDataFromFirebase(StudentAdapter studentAdapter) {
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -41,8 +45,11 @@ public class FirebaseDataBaseHelper {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Student> studentList = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Semester semester = snapshot.getValue(Semester.class);
-                    studentList.add(semester.getStudent());
+                    HashMap<String, HashMap<String, String>> hashMap = (HashMap<String, HashMap<String, String>>) snapshot.getValue();
+                    for (Map.Entry entry : Objects.requireNonNull(hashMap).entrySet()) {
+                        HashMap<String, String> map = (HashMap<String, String>) entry.getValue();
+                        studentList.add(new Student(map.get("presence_precent"), map.get("first_grade"), map.get("final_grade"), map.get("fullname"), map.get("subject"), String.valueOf(entry.getKey().toString().charAt(entry.getKey().toString().length() -1))));
+                    }
                 }
                 studentAdapter.setStudentList(studentList);
                 studentAdapter.notifyDataSetChanged();

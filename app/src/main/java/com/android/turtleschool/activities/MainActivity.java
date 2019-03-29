@@ -1,6 +1,5 @@
 package com.android.turtleschool.activities;
 
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;

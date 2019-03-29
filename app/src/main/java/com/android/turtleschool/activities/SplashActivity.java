@@ -1,9 +1,8 @@
 package com.android.turtleschool.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
 import com.android.turtleschool.R;
 
 public class SplashActivity extends BaseActivity {
@@ -14,8 +13,7 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
         new Thread(() -> {
             try {
-                // sleep during 800ms
-                Thread.sleep(5000);
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
