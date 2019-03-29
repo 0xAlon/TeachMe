@@ -1,5 +1,6 @@
 package com.android.turtleschool;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -15,24 +17,40 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+@SuppressLint("ViewConstructor")
 public class BottomSheetView extends LinearLayout {
 
+    @BindView(R.id.tilSearch)
+    TextInputLayout tilSearch;
     @BindView(R.id.etSearch)
     TextInputEditText etSearch;
     @BindView(R.id.lvList)
     ListView lvList;
     private ArrayList<String> filteredList;
-    private MainActivity.CloseListener closeListener;
+    private MainActivity.OnCloseListener onCloseListener;
+    private MainActivity.OnChoseValueListener onChoseValueListener;
+    private String type;
 
-    public BottomSheetView(Context context, ArrayList<String> originalList) {
+    public BottomSheetView(Context context, ArrayList<String> originalList, String type) {
         super(context);
         inflate(context, R.layout.view_button_sheet, this);
         ButterKnife.bind(this);
-        intiSearch(originalList);
+        this.type = type;
+        boolean isSearchAbility = !type.equalsIgnoreCase("semester");
+        if (isSearchAbility) {
+            intiSearch(originalList);
+        } else {
+            tilSearch.setVisibility(GONE);
+            lvList.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, originalList));
+            lvList.setOnItemClickListener((parent, view, position, id) -> {
+                if (onChoseValueListener != null) {
+                    onChoseValueListener.onChoseValue(type, originalList.get(position));
+                }
+            });
+        }
     }
 
     private void intiSearch(ArrayList<String> originalList) {
-
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -41,7 +59,6 @@ public class BottomSheetView extends LinearLayout {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                 if (count == 0) {
                     lvList.setVisibility(INVISIBLE);
                 } else {
@@ -52,8 +69,12 @@ public class BottomSheetView extends LinearLayout {
                             filteredList.add(value);
                         }
                     }
-
                     lvList.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, filteredList));
+                    lvList.setOnItemClickListener((parent, view, position, id) -> {
+                        if (onChoseValueListener != null) {
+                            onChoseValueListener.onChoseValue(type, filteredList.get(position));
+                        }
+                    });
                 }
             }
 
@@ -64,14 +85,18 @@ public class BottomSheetView extends LinearLayout {
         });
     }
 
-    @OnClick(R.id.ibClose)
+    @OnClick(R.id.llClose)
     public void close() {
-        if (closeListener != null) {
-            closeListener.onCloseClicked();
+        if (onCloseListener != null) {
+            onCloseListener.onCloseClicked();
         }
     }
 
-    public void setCloseListener(MainActivity.CloseListener closeListener) {
-        this.closeListener = closeListener;
+    public void setOnCloseListener(MainActivity.OnCloseListener onCloseListener) {
+        this.onCloseListener = onCloseListener;
+    }
+
+    public void setOnChoseValueListener(MainActivity.OnChoseValueListener onChoseValueListener) {
+        this.onChoseValueListener = onChoseValueListener;
     }
 }

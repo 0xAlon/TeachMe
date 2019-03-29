@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/llContainer"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/colorGreen"
@@ -23,7 +24,7 @@
         <TextView
             android:id="@+id/tvSubject"
             style="@style/text_view_rubik_16"
-            android:drawableTop="@drawable/ic_book"
+            android:drawableTop="@drawable/ic_computer"
             android:drawablePadding="0dp"
             android:text="מקצוע" />
 
@@ -32,19 +33,26 @@
         <TextView
             android:id="@+id/tvStudentName"
             style="@style/text_view_rubik_16"
-            android:drawableTop="@drawable/ic_computer"
+            android:drawableTop="@drawable/ic_book"
             android:text="שם תלמיד" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tvStartWorking"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:fontFamily="@font/rubik_medium"
         android:gravity="center"
         android:text="לתחילת עבודה\nהשתמש בתפריט"
         android:textColor="#bcbcbc"
         android:textSize="26sp" />
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llContainer" />
+
+</RelativeLayout>

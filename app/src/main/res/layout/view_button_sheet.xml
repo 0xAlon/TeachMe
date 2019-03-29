@@ -7,19 +7,27 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-    <ImageButton
-        android:id="@+id/ibClose"
+    <LinearLayout
+        android:id="@+id/llClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:background="@drawable/ic_delete_cross"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:padding="15dp"
-        tools:ignore="ContentDescription" />
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_delete_cross"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:endIconDrawable="@drawable/ic_rubbish_bin"
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -38,6 +46,10 @@
     <ListView
         android:id="@+id/lvList"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="500dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
+        android:focusable="true" />
 
 </LinearLayout>
