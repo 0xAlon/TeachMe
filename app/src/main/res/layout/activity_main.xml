@@ -10,77 +10,40 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/colorGreen"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <TextView
             android:id="@+id/tvSemester"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackground"
+            style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_calendar"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/rubik"
-            android:gravity="center"
-            android:text="סמסטר"
-            android:padding="15dp"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:text="סמסטר" />
 
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@android:color/white" />
+        <View style="@style/divider" />
 
         <TextView
             android:id="@+id/tvSubject"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackground"
+            style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_book"
-            android:fontFamily="@font/rubik"
-            android:gravity="center"
-            android:text="מקצוע"
-            android:padding="15dp"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:drawablePadding="0dp"
+            android:text="מקצוע" />
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@android:color/white" />
+        <View style="@style/divider" />
 
         <TextView
             android:id="@+id/tvStudentName"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackground"
+            style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_computer"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/rubik"
-            android:gravity="center"
-            android:text="שם תלמיד"
-            android:padding="15dp"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:text="שם תלמיד" />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:fontFamily="@font/rubik_medium"
         android:gravity="center"
         android:text="לתחילת עבודה\nהשתמש בתפריט"
-        android:layout_gravity="center"
         android:textColor="#bcbcbc"
         android:textSize="26sp" />
 
