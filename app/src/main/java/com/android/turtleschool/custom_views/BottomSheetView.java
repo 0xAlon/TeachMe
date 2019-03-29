@@ -1,4 +1,4 @@
-package com.android.turtleschool;
+package com.android.turtleschool.custom_views;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.android.turtleschool.R;
+import com.android.turtleschool.activities.MainActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 

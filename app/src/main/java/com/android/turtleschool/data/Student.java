@@ -1,10 +1,10 @@
-package com.android.turtleschool.storage;
+package com.android.turtleschool.data;
 
 public class Student extends Person {
 
     private String firstGrade, finalGrade, presencePrecent;
 
-    public Student(String fullname, String firstGrade, String finalGrade, String presencePrecent){
+    public Student(String fullname, String firstGrade, String finalGrade, String presencePrecent) {
         setFullName(fullname);
         this.firstGrade = firstGrade;
         this.finalGrade = finalGrade;

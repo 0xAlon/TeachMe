@@ -1,21 +1,18 @@
-package com.android.turtleschool;
+package com.android.turtleschool.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.android.turtleschool.storage.FirebaseDataBaseAccessor;
-import com.android.turtleschool.storage.School;
+import com.android.turtleschool.R;
+import com.android.turtleschool.storage.FirebaseDataBaseHelper;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,26 +27,22 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     private DatabaseReference myRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        float[] hsv = new float[3];
+        Color.colorToHSV(getResources().getColor(R.color.colorGreen), hsv);
+        hsv[2] *= 0.8f; // value component
+        getWindow().setStatusBarColor(Color.HSVToColor(hsv));
         //Get Firebase auth instance
         firebaseAuth = FirebaseAuth.getInstance();
-
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("school");
-
-        //FirebaseDataBaseAccessor.getInstance().fillSchoolDataFromFirebase();
-        FirebaseDataBaseAccessor.getInstance().addDataStudent("assaf","60", "89", "0");
-        FirebaseDataBaseAccessor.getInstance().addDataStudent("refael","60", "89", "0");
-        // remember your login
+        //Remember your login
         if (firebaseAuth.getCurrentUser() != null) {
-            /*startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();*/
-
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
         }
     }
 
@@ -57,17 +50,14 @@ public class LoginActivity extends AppCompatActivity {
     public void singIn() {
         String email = etUserName.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Enter email address!", Toast.LENGTH_SHORT).show();
             return;
         }
-
         if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Enter password!", Toast.LENGTH_SHORT).show();
             return;
         }
-
         if (password.length() < 6) {
             Toast.makeText(this, "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
             return;
@@ -76,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         //Login button click listener
         validate(email, password);
     }
-
 
     private void validate(String userName, String Password) {
         firebaseAuth.signInWithEmailAndPassword(userName, Password).addOnCompleteListener(this, task -> {

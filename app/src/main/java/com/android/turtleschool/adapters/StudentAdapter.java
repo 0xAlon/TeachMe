@@ -1,8 +1,11 @@
-package com.android.turtleschool;
+package com.android.turtleschool.adapters;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.android.turtleschool.R;
+import com.android.turtleschool.data.Student;
 
 import java.util.List;
 
@@ -13,9 +16,9 @@ import butterknife.ButterKnife;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
 
-    private List<String> studentList;
+    private List<Student> studentList;
 
-    StudentAdapter(List<String> studentList) {
+    public StudentAdapter(List<Student> studentList) {
         this.studentList = studentList;
     }
 
@@ -27,10 +30,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
-        String student = studentList.get(position);
-        holder.tvName.setText(student);
-        holder.tvGrade1.setText("90");
-        holder.tvGrade2.setText("100");
+        Student student = studentList.get(position);
+        holder.tvName.setText(student.getFullName());
+        holder.tvGrade1.setText(student.getFirstGrade());
+        holder.tvGrade2.setText(student.getFinalGrade());
         holder.tvSemester.setText("א");
         holder.tvSubject.setText("אנגלית");
     }
@@ -40,7 +43,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         return studentList.size();
     }
 
-    public void setStudentList(List<String> studentList) {
+    public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
     }
 

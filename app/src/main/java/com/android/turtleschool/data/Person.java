@@ -1,4 +1,4 @@
-package com.android.turtleschool.storage;
+package com.android.turtleschool.data;
 
 public class Person {
 
