@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity {
             bottomSheetDialog.dismiss();
             tvStartWorking.setVisibility(View.GONE);
             if (studentAdapter == null) {
-                studentAdapter = new StudentAdapter(studentList);
+                rvList.setAdapter(studentAdapter = new StudentAdapter(studentList));
             }
             FirebaseDataBaseHelper.getInstance().fillSchoolDataFromFirebase(studentAdapter);
 

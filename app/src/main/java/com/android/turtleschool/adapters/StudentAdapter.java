@@ -32,8 +32,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student student = studentList.get(position);
         holder.tvName.setText(student.getFullName());
-        holder.tvGrade1.setText(student.getFirstGrade());
-        holder.tvGrade2.setText(student.getFinalGrade());
+        holder.tvGrade1.setText(student.getFirst_grade());
+        holder.tvGrade2.setText(student.getFinal_grade());
         holder.tvSemester.setText("א");
         holder.tvSubject.setText("אנגלית");
     }

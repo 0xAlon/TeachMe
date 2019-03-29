@@ -2,37 +2,40 @@ package com.android.turtleschool.data;
 
 public class Student extends Person {
 
-    private String firstGrade, finalGrade, presencePrecent;
+    private String presence_precent, first_grade, final_grade;
 
-    public Student(String fullname, String firstGrade, String finalGrade, String presencePrecent) {
-        setFullName(fullname);
-        this.firstGrade = firstGrade;
-        this.finalGrade = finalGrade;
-        this.presencePrecent = presencePrecent;
+    public Student(){
+
     }
 
-    public String getFinalGrade() {
-        return finalGrade;
+    public Student(String fullName, String first_grade, String final_grade, String presence_precent) {
+        this.presence_precent = presence_precent;
+        this.first_grade = first_grade;
+        this.final_grade = final_grade;
+        setFullName(fullName);
     }
 
-    public void setFinalGrade(String finalGrade) {
-        this.finalGrade = finalGrade;
+    public String getFinal_grade() {
+        return final_grade;
     }
 
-    public String getFirstGrade() {
-        return firstGrade;
+    public void setFinal_grade(String final_grade) {
+        this.final_grade = final_grade;
     }
 
-    public void setFirstGrade(String firstGrade) {
-        this.firstGrade = firstGrade;
+    public String getFirst_grade() {
+        return first_grade;
     }
 
-    public String getPresencePrecent() {
-        return presencePrecent;
+    public void setFirst_grade(String first_grade) {
+        this.first_grade = first_grade;
     }
 
-    public void setPresencePrecent(String presencePrecent) {
-        this.presencePrecent = presencePrecent;
+    public String getPresence_precent() {
+        return presence_precent;
     }
 
+    public void setPresence_precent(String presence_precent) {
+        this.presence_precent = presence_precent;
+    }
 }
