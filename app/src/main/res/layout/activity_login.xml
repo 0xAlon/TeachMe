@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.8"
-        android:background="@color/backLogin"
+        android:background="@color/colorGreen"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -90,8 +90,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="35dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/backLogin"
+            android:background="@color/colorGreen"
+            android:foreground="?android:attr/selectableItemBackground"
             android:text="היכנס"
             android:textColor="@android:color/white"
             android:textSize="24sp"

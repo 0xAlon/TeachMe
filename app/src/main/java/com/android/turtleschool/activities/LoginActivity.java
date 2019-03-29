@@ -26,8 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText etPassword;
     private FirebaseAuth firebaseAuth;
 
-    private DatabaseReference myRef;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

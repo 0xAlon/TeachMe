@@ -4,6 +4,5 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#bcbcbc</color>
     <color name="textLogin">#7b7b7b</color>
-    <color name="backLogin">#00cb65</color>
     <color name="colorGreen">#00cb65</color>
 </resources>
