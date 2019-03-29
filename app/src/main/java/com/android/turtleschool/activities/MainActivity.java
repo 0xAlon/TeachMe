@@ -63,16 +63,25 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.tvStudentName:
                 type = "studentName";
-                originalList.add("Alon");
-                originalList.add("Alon1");
-                originalList.add("Allp");
-                originalList.add("Alon2");
+                originalList.add("אלון טפליצקי");
+                originalList.add("אלירז סבג");
+                originalList.add("אלינור כהן");
+                originalList.add("אלי דוידי");
+                originalList.add("אסף צפני");
+                originalList.add("אסי רווח");
+                originalList.add("אסולין גנות");
+                originalList.add("רפאל בקר");
+                originalList.add("רפי דוידי");
+                originalList.add("רפול גת");
                 break;
             case R.id.tvSubject:
                 type = "subject";
-                originalList.add("history");
-                originalList.add("math");
-                originalList.add("sport");
+                originalList.add("היסטוריה");
+                originalList.add("מתמטיקה");
+                originalList.add("ספרות");
+                originalList.add("ספורט");
+                originalList.add("לשון");
+                originalList.add("אנגלית");
                 break;
         }
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
