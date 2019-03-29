@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -25,7 +26,6 @@
             android:id="@+id/tvSubject"
             style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_computer"
-            android:drawablePadding="0dp"
             android:text="מקצוע" />
 
         <View style="@style/divider" />
@@ -34,6 +34,7 @@
             android:id="@+id/tvStudentName"
             style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_book"
+            android:drawablePadding="0dp"
             android:text="שם תלמיד" />
 
     </LinearLayout>
@@ -57,6 +58,7 @@
         android:paddingTop="7.5dp"
         android:paddingBottom="7.5dp"
         android:paddingEnd="10dp"
-        android:paddingStart="10dp" />
+        android:paddingStart="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </RelativeLayout>

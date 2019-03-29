@@ -1,6 +1,7 @@
 package com.android.turtleschool;
 
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,8 +9,13 @@ import android.widget.TextView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -24,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
     TextView tvSemester;
     @BindView(R.id.tvStartWorking)
     TextView tvStartWorking;
-
-
+    @BindView(R.id.rvList)
+    RecyclerView rvList;
+    private StudentAdapter studentAdapter;
+    private List<String> studentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,29 @@ public class MainActivity extends AppCompatActivity {
         Color.colorToHSV(getResources().getColor(R.color.colorGreen), hsv);
         hsv[2] *= 0.8f; // value component
         getWindow().setStatusBarColor(Color.HSVToColor(hsv));
+
+        rvList.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                outRect.bottom = (int) ((float) 5 * (getResources().getDisplayMetrics().densityDpi / 160f));
+            }
+        });
+
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
+        studentList.add("Alon Teplitsky");
     }
 
     @OnClick({R.id.tvSemester, R.id.tvStudentName, R.id.tvSubject})
@@ -81,7 +112,12 @@ public class MainActivity extends AppCompatActivity {
             }
             bottomSheetDialog.dismiss();
             tvStartWorking.setVisibility(View.GONE);
-
+            if (studentAdapter == null) {
+                rvList.setAdapter(studentAdapter = new StudentAdapter(studentList));
+            } else {
+                studentAdapter.setStudentList(studentList);
+                studentAdapter.notifyDataSetChanged();
+            }
         });
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
