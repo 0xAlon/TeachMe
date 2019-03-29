@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     TextView tvStudentName;
     @BindView(R.id.tvSemester)
     TextView tvSemester;
+    @BindView(R.id.tvStartWorking)
+    TextView tvStartWorking;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             bottomSheetDialog.dismiss();
+            tvStartWorking.setVisibility(View.GONE);
+
         });
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
