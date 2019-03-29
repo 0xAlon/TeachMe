@@ -31,6 +31,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         holder.tvName.setText(student);
         holder.tvGrade1.setText("90");
         holder.tvGrade2.setText("100");
+        holder.tvSemester.setText("א");
+        holder.tvSubject.setText("אנגלית");
     }
 
     @Override
@@ -50,6 +52,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         TextView tvGrade2;
         @BindView(R.id.tvName)
         TextView tvName;
+        @BindView(R.id.tvSemester)
+        TextView tvSemester;
+        @BindView(R.id.tvSubject)
+        TextView tvSubject;
 
         StudentViewHolder(@NonNull View itemView) {
             super(itemView);
