@@ -3,11 +3,19 @@ package com.android.turtleschool;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.turtleschool.storage.FirebaseDataBaseAccessor;
+import com.android.turtleschool.storage.School;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,11 +24,12 @@ import butterknife.OnClick;
 public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.etUserName)
-    EditText etUserName;
+    TextInputEditText etUserName;
     @BindView(R.id.etPassword)
-    EditText etPassword;
+    TextInputEditText etPassword;
     private FirebaseAuth firebaseAuth;
 
+    private DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +38,19 @@ public class LoginActivity extends AppCompatActivity {
         //Get Firebase auth instance
         firebaseAuth = FirebaseAuth.getInstance();
 
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("school");
+
+        //FirebaseDataBaseAccessor.getInstance().fillSchoolDataFromFirebase();
+        FirebaseDataBaseAccessor.getInstance().addDataStudent("assaf","60", "89", "0");
+        FirebaseDataBaseAccessor.getInstance().addDataStudent("refael","60", "89", "0");
         // remember your login
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
-        }
+            /*startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();*/
 
-        //validate email and password
+        }
     }
 
     @OnClick(R.id.btnSignIn)
@@ -62,11 +77,14 @@ public class LoginActivity extends AppCompatActivity {
         validate(email, password);
     }
 
+
     private void validate(String userName, String Password) {
         firebaseAuth.signInWithEmailAndPassword(userName, Password).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
+            } else {
+                Toast.makeText(this, "One of the entered details is incorrect", Toast.LENGTH_SHORT).show();
             }
         });
     }

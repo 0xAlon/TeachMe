@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,30 +43,47 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etUserName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:focusableInTouchMode="true"
-            android:hint="שם משתמש"
-            android:inputType="textEmailAddress"
-            android:singleLine="true"
-            android:textColor="@color/textLogin"
-            android:textSize="22sp" />
+            app:endIconMode="clear_text">
 
-        <EditText
-            android:id="@+id/etPassword"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_light"
+                android:gravity="right"
+                android:hint="שם משתמש"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textColor="@color/textLogin"
+                android:textSize="22sp"
+                tools:ignore="RtlHardcoded" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:focusableInTouchMode="true"
-            android:gravity="end"
-            android:hint="סיסמא"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:textColor="@color/textLogin"
-            android:textSize="22sp" />
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_light"
+                android:gravity="right"
+                android:hint="סיסמא"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/textLogin"
+                android:textSize="22sp"
+                tools:ignore="RtlHardcoded" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnSignIn"
