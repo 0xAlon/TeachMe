@@ -1,4 +1,4 @@
-# Turtle school application
+# TeachMe
 
 [![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
 
@@ -11,22 +11,29 @@
 
 ### Tech
 
-Turtle school application use a number of open source projects to work properly:
+TeachMe application use a number of open source projects and tools to work properly:
 
 * [Firebase Database] - A cloud-hosted NoSQL database that lets you store and sync data
 * [Firebase Authentication] - Authentication service by Firebase
+* [TextInputLayout]- Layout which wraps an EditText (or descendant) to show a floating label when the hint is hidden due to the user inputting text
+* [RecyclerView]- Advanced and flexible version of ListView
+* [GifImageView]- Android ImageView that handles animated GIF images
+* [CardView]
+* [Downloadable Fonts]
+* [BottomSheetDialog] 
 
 
 ### Installation
 
-Turtle school application requires Android device running API 21+
+TeachMe application requires Android device running API 21+
 
 ### Todos
 
- - A million things 😫
+ - A million things - 1 😫
 
 License
 ---
 
 [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
+
 **Free App, Hell Yeah!**
