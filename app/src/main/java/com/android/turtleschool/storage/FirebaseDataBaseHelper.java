@@ -1,6 +1,7 @@
 package com.android.turtleschool.storage;
 
 import com.android.turtleschool.adapters.StudentAdapter;
+import com.android.turtleschool.data.Semester;
 import com.android.turtleschool.data.Student;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,8 +16,7 @@ import androidx.annotation.NonNull;
 public class FirebaseDataBaseHelper {
 
     private static FirebaseDataBaseHelper instance;
-    //private School school;
-    private static int countID = 1;
+    //private static int countID = 1;
 
     public static synchronized FirebaseDataBaseHelper getInstance() {
         FirebaseDataBaseHelper result = instance;
@@ -41,8 +41,8 @@ public class FirebaseDataBaseHelper {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Student> studentList = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Student student = snapshot.getValue(Student.class);
-                    studentList.add(student);
+                    Semester semester = snapshot.getValue(Semester.class);
+                    studentList.add(semester.getStudent());
                 }
                 studentAdapter.setStudentList(studentList);
                 studentAdapter.notifyDataSetChanged();
@@ -55,7 +55,7 @@ public class FirebaseDataBaseHelper {
         });
     }
 
-    public void addDataStudent(String fullName, String final_grade, String first_grade, String presencePrecent) {
+    /*public void addDataStudent(String fullName, String final_grade, String first_grade, String presencePrecent) {
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("school/students/" + countID++);
@@ -76,11 +76,6 @@ public class FirebaseDataBaseHelper {
                 // Failed to read value
             }
         });
-
-    }
-
-    /*public School getSchoolData() {
-        return school;
     }*/
 }
 
