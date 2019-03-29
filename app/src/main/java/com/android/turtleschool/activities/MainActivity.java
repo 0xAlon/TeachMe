@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.tvSubject)
     TextView tvSubject;
@@ -43,10 +43,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        float[] hsv = new float[3];
-        Color.colorToHSV(getResources().getColor(R.color.colorGreen), hsv);
-        hsv[2] *= 0.8f; // value component
-        getWindow().setStatusBarColor(Color.HSVToColor(hsv));
         rvList.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {

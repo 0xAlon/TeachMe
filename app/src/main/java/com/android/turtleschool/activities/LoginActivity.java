@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.etUserName)
     TextInputEditText etUserName;
@@ -31,10 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        float[] hsv = new float[3];
-        Color.colorToHSV(getResources().getColor(R.color.colorGreen), hsv);
-        hsv[2] *= 0.8f; // value component
-        getWindow().setStatusBarColor(Color.HSVToColor(hsv));
         //Get Firebase auth instance
         firebaseAuth = FirebaseAuth.getInstance();
         //Remember your login

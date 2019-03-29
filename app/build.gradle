@@ -36,6 +36,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.android.material:material:1.1.0-alpha05'
     implementation 'com.jakewharton:butterknife:10.1.0'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
 }
 
 apply plugin: 'com.google.gms.google-services'
