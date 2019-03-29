@@ -104,8 +104,7 @@ public class MainActivity extends BaseActivity {
             if (studentAdapter == null) {
                 rvList.setAdapter(studentAdapter = new StudentAdapter(studentList));
             }
-            FirebaseDataBaseHelper.getInstance().fillSchoolDataFromFirebase(studentAdapter);
-
+            FirebaseDataBaseHelper.getInstance().fillSchoolDataFromFirebase(studentAdapter, type1, value);
         });
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();

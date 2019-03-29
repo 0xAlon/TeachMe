@@ -20,7 +20,8 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_knowledge" />
+            android:background="@drawable/ic_knowledge"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/teachMe"
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="TeachMe"
+            android:text="@string/app_name"
             android:textColor="@android:color/white"
             android:textSize="29sp"
             android:textStyle="bold"
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_light"
                 android:gravity="right"
-                android:hint="שם משתמש"
+                android:hint="@string/user_name"
                 android:inputType="textEmailAddress"
                 android:singleLine="true"
                 android:textColor="@color/textLogin"
@@ -76,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_light"
                 android:gravity="right"
-                android:hint="סיסמא"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="@color/textLogin"
@@ -92,7 +93,7 @@
             android:layout_margin="35dp"
             android:background="@color/colorGreen"
             android:foreground="?android:attr/selectableItemBackground"
-            android:text="היכנס"
+            android:text="@string/sign_in"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             tools:fontFamily="@font/rubik_medium" />

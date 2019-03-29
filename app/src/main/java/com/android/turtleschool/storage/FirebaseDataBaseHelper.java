@@ -35,7 +35,7 @@ public class FirebaseDataBaseHelper {
 
     @SuppressWarnings("unchecked")
 
-    public void fillSchoolDataFromFirebase(StudentAdapter studentAdapter) {
+    public void fillSchoolDataFromFirebase(StudentAdapter studentAdapter, String type, String value) {
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("school/students");
@@ -48,10 +48,30 @@ public class FirebaseDataBaseHelper {
                     HashMap<String, HashMap<String, String>> hashMap = (HashMap<String, HashMap<String, String>>) snapshot.getValue();
                     for (Map.Entry entry : Objects.requireNonNull(hashMap).entrySet()) {
                         HashMap<String, String> map = (HashMap<String, String>) entry.getValue();
-                        studentList.add(new Student(map.get("presence_precent"), map.get("first_grade"), map.get("final_grade"), map.get("fullname"), map.get("subject"), String.valueOf(entry.getKey().toString().charAt(entry.getKey().toString().length() -1))));
+                        studentList.add(new Student(map.get("presence_precent"), map.get("first_grade"), map.get("final_grade"), map.get("fullname"), map.get("subject"), String.valueOf(entry.getKey().toString().charAt(entry.getKey().toString().length() - 1))));
                     }
                 }
-                studentAdapter.setStudentList(studentList);
+                ArrayList<Student> filteredList = new ArrayList<>();
+                for (Student student : studentList) {
+                    switch (type) {
+                        case "subject":
+                            if (student.getSubject().equalsIgnoreCase(value)) {
+                                filteredList.add(student);
+                            }
+                            break;
+                        case "semester":
+                            if (String.valueOf(value.charAt(value.length() - 1)).equalsIgnoreCase(student.getSemester())) {
+                                filteredList.add(student);
+                            }
+                            break;
+                        case "studentName":
+                            if (student.getFullname().equalsIgnoreCase(value)) {
+                                filteredList.add(student);
+                            }
+                            break;
+                    }
+                }
+                studentAdapter.setStudentList(filteredList);
                 studentAdapter.notifyDataSetChanged();
             }
 

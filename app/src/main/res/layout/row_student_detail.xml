@@ -8,13 +8,11 @@
         android:layout_height="wrap_content"
         android:background="@drawable/box_background"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
         android:padding="15dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -50,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_light"
-                android:text="סמסטר"
+                android:text="@string/title_semester"
                 android:textColor="#7b7b7b"
                 android:textSize="14sp" />
 
@@ -81,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_light"
-                android:text="ציון התחלתי"
+                android:text="@string/first_grade"
                 android:textColor="#7b7b7b"
                 android:textSize="14sp" />
 
@@ -112,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_light"
-                android:text="ציון סופי"
+                android:text="@string/final_grade"
                 android:textColor="#7b7b7b"
                 android:textSize="14sp" />
 

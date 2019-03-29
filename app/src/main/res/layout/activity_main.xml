@@ -18,7 +18,7 @@
             android:id="@+id/tvSemester"
             style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_calendar"
-            android:text="סמסטר" />
+            android:text="@string/title_semester" />
 
         <View style="@style/divider" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/tvSubject"
             style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_computer"
-            android:text="מקצוע" />
+            android:text="@string/title_subject" />
 
         <View style="@style/divider" />
 
@@ -35,7 +35,7 @@
             style="@style/text_view_rubik_16"
             android:drawableTop="@drawable/ic_book"
             android:drawablePadding="0dp"
-            android:text="שם התלמיד" />
+            android:text="@string/title_student_name" />
 
     </LinearLayout>
 
@@ -46,7 +46,7 @@
         android:layout_centerInParent="true"
         android:fontFamily="@font/rubik_medium"
         android:gravity="center"
-        android:text="לתחילת העבודה\nהשתמש בתפריט"
+        android:text="@string/start_working_message"
         android:textColor="#bcbcbc"
         android:textSize="26sp" />
 

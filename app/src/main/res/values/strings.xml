@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">Turtle school</string>
+    <string name="app_name">TeachMe</string>
     <string name="auth_failed">failed login, let\'s do it again..</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters</string>
+    <string name="title_semester">סמסטר</string>
+    <string name="title_subject">מקצוע</string>
+    <string name="title_student_name">שם התלמיד</string>
+    <string name="start_working_message">לתחילת העבודה\\nהשתמש בתפריט</string>
+    <string name="user_name">שם משתמש</string>
+    <string name="password">סיסמא</string>
+    <string name="sign_in">היכנס</string>
+    <string name="first_grade">ציון התחלתי</string>
+    <string name="final_grade">ציון סופי</string>
 
 </resources>
